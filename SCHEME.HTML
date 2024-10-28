@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Schemes - by Sanket Chothe</title>
+     <!-- External CSS file -->
+     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8f0;
+            }
+        
+        /* Header styling */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        .header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 15px;
+            transition: color 0.3s ease;
+
+        }
+
+        .navbar ul li a:hover {
+            color: #4CAF50;
+            transform: translateY(5px);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+            color: #333;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #4CAF50;
+        }
+        
+        .header1 {
+            background-color: #94d794;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            background-image: linear-gradient(rgba(239, 125, 20, 0.9), rgba(0,100,0,0.9)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            margin-top: 100px;
+        
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .scheme-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .scheme-title {
+            color: #006400;
+            margin-bottom: 10px;
+        }
+
+        .scheme-description {
+            color: #333;
+        }
+
+        .benefits {
+            background-color: #e8f5e8;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .benefits ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+      
+
+        .highlight {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        /* Footer section */
+footer {
+        background-color: #333;
+        color: #fff;
+        padding: 30px 20px;
+        text-align: center;
+        margin-top: 20px; /* Pushes footer below other content */
+        width: 100%;
+    }
+
+    footer .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    footer .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 15px;
+        transition: color 0.3s ease;
+    }
+
+    footer .footer-links a:hover {
+        color: #4CAF50;
+    }
+
+    footer .social-icons a {
+        color: #fff;
+        font-size: 2rem;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+        color: #4CAF50;
+        transform: translateY(-5px);
+    }
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Agriconnect</a>
+    
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">Tools</a></li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="organic1.html">Organic Fertilizers</a>
+                        <a href="chemical.html">Chemical Fertilizers</a>
+                    </div>
+                </li>
+                <li><a href="Technique.html">Education & Training</a></li>
+                <li><a href="SCHEME.HTML">Scheme</a></li>
+                <li><a href="Blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    
+        <div class="icons">
+            <i class="fa fa-bars" id="menu-btn"></i>
+            <i class="fa fa-user"></i>
+        </div>
+    
+        <form class="search-form">
+            <input type="search" id="search-box" placeholder="Search Here...">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+    </header>
+    
+    <header class="header1">
+        <h1>Schemes for Farmers</h1>
+        <h2>Government of India</h2>
+    </header>
+
+    <div class="container">
+        <div class="scheme-card">
+            <h2 class="scheme-title">PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)</h2>
+            <div class="scheme-description">
+                <p>A central sector scheme providing income support of ₹6,000 per year to all landholding farmer families across the country.</p>
+                <div class="benefits">
+                    <h3>Key Benefits:</h3>
+                    <ul>
+                        <li>Direct income support of ₹6,000 per year</li>
+                        <li>Distributed in three installments of ₹2,000 each</li>
+                        <li>Direct transfer to bank accounts</li>
+                        <li>Covers all landholding farmer families</li>
+                    </ul>
+                </div>
+            </div>
+            <h2>Learn More</h2>
+        <p>To learn more about PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), consider visiting <a href="https://pmkisan.gov.in/"><h2>PM-KISAN </h2></a></p>
+        </div>
+        
+
+        <div class="scheme-card">
+            <h2 class="scheme-title">PM Fasal Bima Yojana</h2>
+            <div class="scheme-description">
+                <p>A comprehensive crop insurance scheme providing coverage against crop loss due to natural calamities.</p>
+                <div class="benefits">
+                    <h3>Coverage:</h3>
+                    <ul>
+                        <li>Protection against natural calamities</li>
+                        <li>Post-harvest losses coverage</li>
+                        <li>Low premium rates</li>
+                        <li>Use of technology for quick claim settlement</li>
+                    </ul>
+                </div>
+            </div>
+            <h2>Learn More</h2>
+        <p>To learn more about PM Fasal Bima Yojana, consider visiting <a href="https://pmfby.gov.in/"><h2>PM-FASAL BIMA YOJANA</h2></a></p>
+        </div>
+
+        <div class="scheme-card">
+            <h2 class="scheme-title">Kisan Credit Card (KCC)</h2>
+            <div class="scheme-description">
+                <p>Provides farmers with timely access to credit for their agricultural needs.</p>
+                <div class="benefits">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Flexible credit limits</li>
+                        <li>Reduced interest rates</li>
+                        <li>Coverage for multiple agricultural expenses</li>
+                        <li>Insurance coverage for card holders</li>
+                    </ul>
+                </div>
+            </div>
+            <h2>Learn More</h2>
+        <p>To learn more about Kisan Credit Card (KCC), consider visiting <a href="https://www.myscheme.gov.in/schemes/kcc"><h2>KISAN CREATE CARD </h2></a></p>
+        </div>
+
+        <div class="scheme-card">
+            <h2 class="scheme-title">National Mission for Sustainable Agriculture (NMSA)</h2>
+            <div class="scheme-description">
+                <p>Promotes sustainable agriculture practices through appropriate adaptation and mitigation strategies.</p>
+                <div class="benefits">
+                    <h3>Focus Areas:</h3>
+                    <ul>
+                        <li>Rainwater harvesting</li>
+                        <li>Soil health management</li>
+                        <li>Climate change adaptation</li>
+                        <li>Water conservation</li>
+                    </ul>
+                </div>
+            </div>
+            <h2>Learn More</h2>
+        <p>To learn more about National Mission for Sustainable Agriculture (NMSA), consider visiting <a href="https://nmsa.dac.gov.in/"><h2>National Mission for Sustainable Agriculture</h2></a></p>
+        </div>
+
+        <div class="scheme-card">
+            <h2 class="scheme-title">E-NAM (Electronic National Agriculture Market)</h2>
+            <div class="scheme-description">
+                <p>A pan-India electronic trading portal that creates a unified national market for agricultural commodities.</p>
+                <div class="benefits">
+                    <h3>Advantages:</h3>
+                    <ul>
+                        <li>Transparent price discovery</li>
+                        <li>Better price realization for farmers</li>
+                        <li>Access to nationwide market</li>
+                        <li>Reduced transaction costs</li>
+                    </ul>
+                </div>
+            </div>
+            <h2>Learn More</h2>
+        <p>To learn more about E-NAM (Electronic National Agriculture Market), consider visiting <a href="https://dmshahdara.delhi.gov.in/scheme/e-national-agriculture-market-e-nam-scheme/"><h2>E-NAM </h2></a></p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Note:</strong> For detailed information and application procedures, please visit the official website of the Ministry of Agriculture & Farmers Welfare, Government of India.</p>
+            <a href="https://agriwelfare.gov.in/"><h2>Agricultural Schemes </h2></a>
+        </div>
+    </div>
+
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-links">
+        <a href="Blogs.html">rewive</a>
+        <a href="contact.html">Contact</a>
+        <a href="aboutmore.html">about</a>
+        <a href="terms.html"></a>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+    </div>
+
+    <div id="google_translate_element"></div>
+</footer>
+<script src="https://kit.fontawesome.com/69c207103e.js" crossorigin="anonymous"></script>
+</body>
+</html>

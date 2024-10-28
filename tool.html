@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Tools for Farmers</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <style>
+        /* Fixed Header */
+/* Header styling */
+.header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        .header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 15px;
+            transition: color 0.3s ease;
+
+        }
+
+        .navbar ul li a:hover {
+            color: #4CAF50;
+            transform: translateY(5px);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+            color: #333;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #4CAF50;
+        }
+        
+        /* Tools Overview */
+        .tools-overview {
+            padding: 60px 40px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .tools-overview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tool-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .tool-card .content {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .tool-card .content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-card .content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tool-card .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tool-card .btn:hover {
+            background-color: #45a049;
+        }
+
+       
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: auto; /* Pushes footer to the bottom */
+            width: 100%;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #4CAF50;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 2rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #a8af4c;
+            transform: translateY(-5px);
+        }
+    </style>
+    <!-- Header section -->
+    <header class="header">
+        <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Agriconnect</a>
+    
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">Tools</a></li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="organic1.html">Organic Fertilizers</a>
+                        <a href="chemical.html">Chemical Fertilizers</a>
+                    </div>
+                </li>
+                <li><a href="Technique.html">Education & Training</a></li>
+                <li><a href="SCHEME.HTML">Scheme</a></li>
+                <li><a href="Blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    
+        <div class="icons">
+            <i class="fa fa-bars" id="menu-btn"></i>
+            <i class="fa fa-user"></i>
+        </div>
+    
+        <form class="search-form">
+            <input type="search" id="search-box" placeholder="Search Here...">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+    </header>
+<!-- Blogs Section -->
+<section class="organic" id="organic">
+    <h1 class="heading"> Our <span>Tools</span></h1>
+    <div class="box-container">
+        <!-- Blog Post 1 -->
+</head>
+
+
+
+<!-- Tools Overview Section -->
+<section class="tools-overview">
+    <h2>Our Tools</h2>
+    <div class="tools-grid">
+        <!-- Tool 1 -->
+        <div class="tool-card">
+            <img src="image/n5.jpg" alt="Tractor">
+            <div class="content">
+                <h3>Modern Tractors</h3>
+                <p>Advanced tractors equipped with smart technology for efficient farming operations.</p>
+                <a href="tactor.html"  class="button">Learn More</a>
+            </div>
+        </div>
+        
+        <!-- Tool 2 -->
+        <div class="tool-card">
+            <img src="image/n1.jpeg" alt="Drone">
+            <div class="content">
+                <h3>Agricultural Drones</h3>
+                <p>High-tech drones for crop monitoring and precision agriculture.</p>
+                <a href="Drone.html"  class="button">Learn More</a>
+            </div>
+        </div>
+        
+        <!-- Tool 3 -->
+        <div class="tool-card">
+            <img src="image/n6.jpg" alt="Power Tillers">
+            <div class="content">
+                <h3>Power Tillers</h3>
+                <p>A tiller is a tool used in agriculture to prepare soil for planting crops.</p>
+                <a href="tiller.html"  class="button">Learn More</a>
+            </div>
+        </div>
+        <!-- Tool 4 -->
+        <div class="tool-card">
+            <img src="image/n7.webp" alt="Brush Cutter">
+            <div class="content">
+                <h3>Brush Cutter</h3>
+                <p>A brush cutter is a powered tool used to trim weeds, small trees, and other foliage that 
+                    is difficult to reach with a lawn mower.</p>
+                <a href="brush.html"  class="button">Learn More</a>
+            </div>
+        </div>
+        <!-- Tool 5 -->
+        <div class="tool-card">
+            <img src="image/n8.webp" alt="Niyo 2 in 1 pump sprayer">
+            <div class="content">
+                <h3>Niyo 2 in 1 pump sprayer</h3>
+                <p>This is a sprayer without a chemical container, used to spray pesticides, insecticides or liquid chemicals 
+                    for large areas of land.</p>
+                <a href="sprayer.html"  class="button">Learn More</a>
+            </div>
+        </div>
+        <!-- Tool 6 -->
+        <div class="tool-card">
+            <img src="image/n9.jpeg" alt="Smart Irrigation Sensors">
+            <div class="content">
+                <h3>Smart Irrigation Sensorsr</h3>
+                <p>Smart irrigation sensors are devices that monitor soil moisture, weather, and other
+                     factors to automatically adjust watering schedules and run times.</p>
+                <a href="smart.html"  class="button">Learn More</a>
+            </div>
+        </div>
+         <!-- Tool 7 -->
+         <div class="tool-card">
+            <img src="image/n10.webp" alt="Soil Moisture Monitoring">
+            <div class="content">
+                <h3>Soil Moisture Monitoring</h3>
+                <p>Soil moisture monitoring (SMM) is the process of measuring the amount of water in the soil</p>
+                <a href="soil.html"  class="button">Learn More</a>
+            </div>
+        </div>
+        <!-- Tool 8 -->
+        <div class="tool-card">
+            <img src="image/n11.jpg" alt="Harvest Machines">
+            <div class="content">
+                <h3>Harvest Machines</h3>
+                <p>Harvesting machines are designed to suit operations at different scales
+                     (small, medium and large scale machines are available for use in the harvesting operations),
+                      including the combine harvesters</p>
+                <a href="harvest.html"  class="button">Learn More</a>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+<!-- Footer section -->
+<footer>
+    <div class="footer-links">
+        <a href="Blogs.html">rewive</a>
+        <a href="contact.html">Contact</a>
+        <a href="aboutmore.html">about</a>
+        <a href="terms.html"></a>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+    </div>
+
+    <div id="google_translate_element"></div>
+</footer>
+<script src="https://kit.fontawesome.com/69c207103e.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

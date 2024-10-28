@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriconnect by Team Vision</title>
+
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Google Fonts CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* Global reset and font settings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Body with gradient background */
+        body {
+            background: linear-gradient(to right, #99ffcc, #66ffcc, #33ff99);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Smooth scroll for links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header styling */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        .header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 15px;
+            transition: color 0.3s ease;
+
+        }
+
+        .navbar ul li a:hover {
+            color: #4CAF50;
+            transform: translateY(5px);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+            color: #333;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #4CAF50;
+        }
+
+        .header5{
+            
+            /* background-color: #fff; */
+            color:black;
+            background: none;
+            text-align: center;
+            margin-left: 60px;
+            margin-right: 60px;
+            height: 60px;
+            padding: 1rem;
+            /* background-image: linear-gradient(rgba(62, 237, 190, 0.9), rgba(172, 230, 194, 0.9)), url('/api/placeholder/1200/400'); */
+            background-size: cover;
+            background-position: center;
+            text-align: cente;
+            margin-top: 98px;
+            margin-bottom: 0%;
+           
+        }
+
+        /* Slider container */
+        .slideshow-container {
+            margin: 0 auto;
+            max-width: 2100px;
+            margin-left: 60px;
+            margin-top: -80px;
+            margin-right: 60px;
+            max-height: 700px;
+            position: relative;
+            /* margin: 60px auto 20px; */
+            background-color: #e0f7fa; /* Fallback background */
+            border-radius: 10px;
+            overflow: hidden
+            
+        }
+
+        /* Image and text overlay */
+        .mySlides img {
+            width: 2100px; /* Keep full width */
+           height: 850px; /* Set a specific height */
+           object-fit: cover; /*Ensures the image covers the space */    
+           /*transform: translateX(-5%); /* Center the image */
+
+        }
+
+        .slideshow-container .text {
+            position: absolute;
+            top: 90%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+            padding: 30px;
+            border-radius: 50px;
+        }
+
+        .slideshow-container .btn {
+            display: inline-block;
+            background-color: #dc5d19;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+        .slideshow-container .btn:hover {
+            background-color: #75c637;
+            transform: translateY(-10px);
+        }
+
+        /* Add padding to the top of the content */
+        .content {
+            flex: 1;
+            padding: 80px 0 50px; /* Adjusting top padding to make space for the fixed header */
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: auto; /* Pushes footer to the bottom */
+            width: 100%;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #4CAF50;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 2rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #a8af4c;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.95);
+                position: absolute;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                transition: left 0.3s ease;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .fa-bars {
+                display: block;
+            }
+
+            .navbar.active ul {
+                left: 0;
+            }
+
+            /* Adjust image height on smaller screens */
+            .mySlides img {
+                height: 300px; /* Set a smaller height for mobile */
+            }
+        }
+    </style>
+
+
+<style>
+    /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow-x: hidden;
+    } */
+
+    .slider {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slides {
+        display: flex;
+        width: calc(100%); /* 2x width to accommodate cloned slides */
+        animation: slide 20s linear infinite;
+    }
+
+    .slide {
+        min-width: 20%; /* Six slides fit in 100% */
+        display: flex;
+        justify-content:center;
+        padding: 50px;
+    }
+
+    .card {
+        width: 400px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        position: relative;
+
+        
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    .card .tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .tag-designer {
+        background-color: #ff89bb;
+    }
+
+    .tag-developer {
+        background-color: #89b4ff;
+    }
+
+    .tag-marketer {
+        background-color: #ffba89;
+    }
+
+    .tag-gamer {
+        background-color: #7dffa1;
+    }
+
+    .tag-editor {
+        background-color: #ffdf89;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .arrow-link {
+        display: inline-block;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #e9f0f7;
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+    /* Slide Up Content */
+.card:hover .card-content {
+    transform: translateY(-20px);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+    .arrow-link:hover {
+        background-color: #d0dae8;
+    }
+/* Border Hover Expansion */
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 5px solid transparent;
+    border-radius: 12px;
+    transition: border 0.3s ease;
+    z-index: -1;
+}
+
+.card:hover:before {
+    border-color: #007BFF;
+}
+
+
+    /* Rotate and Scale */
+.card:hover {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+    .card img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Smooth slider animation */
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Pause animation on hover */
+    .slider:hover .slides {
+        animation-play-state: paused;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .slide {
+            min-width: 33.33%; /* Three slides fit in smaller screens */
+        }
+
+        .card {
+            width: 200px;
+        }
+
+        .card img {
+            height: 120px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .slide {
+            min-width: 50%; /* Two slides fit in extra small screens */
+        }
+
+        .card {
+            width: 150px;
+        }
+
+        .card img {
+            height: 100px;
+        }
+    }
+</style>
+<style>
+.hero1-section {
+    background: linear-gradient(135deg, rgba(255, 217, 87, 0.7), rgba(0, 150, 136, 0.6)),
+                url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    max-width: 100%;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    border-radius: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.hero1-section h2 {
+    font-size: 2.8rem;
+    z-index: 2;
+    margin-bottom: 20px;
+    color: #004d00; /* Lighter green color */
+}
+
+.hero1-section button {
+    background-color: #ffcc00;
+    color: #004d00;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 2;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero1-section button:hover {
+    background-color: #ffe066;
+    transform: translateY(-5px);
+}
+
+.hero1-section button:active {
+    background-color: #ffb300;
+    transform: translateY(0);
+}
+
+.mission-section, .history-section, .values-section, .statistics-section, .team-section, .testimonial-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.mission-section p, .history-section p, .values-section p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.statistics-section {
+    background-color: #e0f7e0;
+}
+
+.values-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.values-list div {
+    width: 150px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-section img {
+    width: 150px;
+    height: 250px;
+    border-radius: 10%;
+}
+.team-section img:hover{
+    transform: translateX(-5px);
+}
+
+.team-member {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.team-member h4 {
+    margin-top: 10px;
+}
+
+.testimonial-section blockquote {
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 600px;
+}
+.about h1.heading {
+font-size: 5rem;
+color: #333;
+margin-bottom: 10px;
+margin-top: 0px;
+color: #4CAF50;
+text-align: center;
+}
+
+
+</style>
+<style>
+    /* Add some basic styling for the map */
+    .map-container {
+        margin-top: 30px;
+        margin-left:100px ;
+        margin-right:100px;
+      
+        height: 200px;
+        position: relative;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+  
+    .contact {
+        padding: 40px;
+        background-color: #f3f4f6;
+    }
+
+    .contact .content {
+        text-align: center;
+    }
+
+    .contact .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .contactInfo {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .contactInfo .box {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .contactInfo .icon {
+        font-size: 24px;
+        margin-right: 15px;
+    }
+
+    .contactInfo h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .contactForm {
+        flex: 1;
+    }
+
+    .contactForm form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactForm .inputBox {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .contactForm .inputBox input, 
+    .contactForm .inputBox textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .contactForm .inputBox input[type="submit"] {
+        background-color: #388e3c;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .contactForm .inputBox input[type="submit"]:hover {
+        background-color: #2e7031;
+    }
+
+    /* Social media section */
+    .social-icons {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #388e3c;
+    }
+
+    /* Responsive Design */
+    @media(max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .contactInfo, .contactForm {
+            margin-bottom: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- Header section -->
+<header class="header">
+    <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Agriconnect</a>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tool.html">Tools</a></li>
+            <li class="dropdown">
+                <a href="#">Products</a>
+                <div class="dropdown-content">
+                    <a href="organic.html">Organic Fertilizers</a>
+                    <a href="chemical.html">Chemical Fertilizers</a>
+                </div>
+            </li>
+            <li><a href="Technique.html">Education & Training</a></li>
+            <li><a href="SCHEME.HTML">Scheme</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <i class="fa fa-bars" id="menu-btn"></i>
+        <i class="fa fa-user"></i>
+    </div>
+
+    <form class="search-form">
+        <input type="search" id="search-box" placeholder="Search Here...">
+        <label for="search-box" class="fa fa-search"></label>
+    </form>
+
+    
+
+
+</header>
+<!-- header5 -->
+<header class="header5">
+    <h1>hi</h1>
+   
+</header>
+
+<!-- Main content container -->
+<div class="content">
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="img/digital.png" alt="Digital Farming">
+            <div class="text">Empowering Farmers Digitally<br>
+                <a href="#contact" class="btn">Connect with Us</a>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/awareness.png" alt="Farming Awareness">
+            <div class="text">Spreading Farming Awareness<br>
+                <a href="#contact" class="btn">Connect with Us</a>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/nature.png" alt="Sustainable Farming">
+            <div class="text">Promoting Sustainable Farming<br>
+                <a href="#contact" class="btn">Connect with Us</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Dots to indicate slides -->
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
+
+</div> <!-- End of content -->
+
+<div class="slider">
+    <div class="slides">
+        <!-- Slide 1 -->
+        <div class="slide">
+            <div class="card">
+                <img src="image/n1.jpeg" alt="Designer image" loading="lazy">
+                <div class="card-content">
+                    <div class="tag tag-designer">Agriconnect</div>
+                    <h3>Agricultural Drones</h3>
+                    <p>Agricultural drones, also known as unmanned aerial vehicles (UAVs), are used in agriculture
+                         to monitor and optimize crop growth and production.</p>
+                    <a href="tool.html" class="arrow-link" aria-label="Read more about Designer">&#10132;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="card">
+                <img src="image/bloom drop.jpeg" alt="Developer image" loading="lazy">
+                <div class="card-content">
+                    <div class="tag tag-developer">Agriconnect</div>
+                    <h3>Bloom Drop</h3>
+                    <p>Bloom drop, or as it's sometimes called—blossom drop, is when the bloom or flower of a vine crop,
+                        drops off, preventing the plant from producing fruit.</p>
+                    <a href="organic.html" class="arrow-link" aria-label="Read more about Developer">&#10132;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="card">
+                <img src="image/npk - Copy.jpeg" alt="Marketer image" loading="lazy">
+                <div class="card-content">
+                    <div class="tag tag-marketer">Agriconnect</div>
+                    <h3>Bio npk</h3>
+                    <p>NPK refers to the three nutrients that constitute complete fertilizers: nitrogen, phosphorus, and potassium</p>
+                    <a href="chemical.html" class="arrow-link" aria-label="Read more about Marketer">&#10132;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+            <div class="card">
+                <img src="image/WhatsApp Image 2024-10-16 at 00.58.35_6617edf7.jpg" alt="Gamer image" loading="lazy">
+                <div class="card-content">
+                    <div class="tag tag-gamer">Agriconnect</div>
+                    <h3>Banana</h3>
+                    <p>Soil for banana should have good drainage, adequate fertility and moisture</p>
+                    <a href="Technique.html" class="arrow-link" aria-label="Read more about Gamer">&#10132;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="slide">
+            <div class="card">
+                <img src="image/n9.jpeg" alt="Editor image" loading="lazy">
+                <div class="card-content">
+                    <div class="tag tag-editor">Agriconnect</div>
+                    <h3>Smart Irrigation Sensors in Agriculture</h3>
+                    <p>Smart irrigation technology uses weather data or soil moisture data to determine the 
+                        irrigation need of the landscape.</p>
+                    <a href="tool.html" class="arrow-link" aria-label="Read more about Editor">&#10132;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 6 -->
+        <!-- <div class="slide">
+            <div class="card">
+                <img src="img/awareness.png" alt="Designer image" loading="lazy">
+                <div class="card-content">
+                    <div class="tag tag-designer">Agriconnect</div>
+                    <h3>Lorem Ipsum</h3>
+                    <p>Lorem ipsum dolor sit explicabo adipisicing elit</p>
+                    <a href="#" class="arrow-link" aria-label="Read more about Designer">&#10132;</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<section 
+      class="about" id="about">
+        <h1 class="heading">  About Us </h1>
+        <div class="hero1-section">
+            <h2>Bridging the Gap Between Traditional Farming and Modern Technology</h2>
+            <button onclick="location.href='aboutmore.html'">Learn More</button>
+        </div>
+    </section>
+
+    <main>
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>Our goal is to provide farmers with the latest information, tools, and techniques in digital farming to boost productivity, ensure sustainability, and secure their livelihoods for future generations.</p>
+        </section>
+
+        <section class="history-section">
+            <h2>Our Story</h2>
+            <p>Our platform was born out of a passion to support farmers in adapting to the rapidly changing landscape of agriculture. With the rise of digital tools, we aim to empower farmers through modern farming techniques that make farming more efficient, sustainable, and profitable.</p>
+        </section>
+
+        <section class="values-section">
+            <h2>Our Core Values</h2>
+            <div class="values-list">
+                <div><strong>Sustainability</strong></div>
+                <div><strong>Innovation</strong></div>
+                <div><strong>Empowerment</strong></div>
+                <div><strong>Community</strong></div>
+            </div>
+        </section>
+
+        <!-- <section class="statistics-section">
+            <h2>Our Impact</h2>
+            <p>We have trained over 10,000 farmers, shared 200+ digital farming techniques, and partnered with more than 50 agricultural experts.</p>
+        </section> -->
+
+        <section class="testimonial-section">
+            <h2>Success Stories</h2>
+            <blockquote>"Coming Soon....."</blockquote>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-member">
+                <img src="img/ankitp.jpg" alt="Team Member 2">
+                <h4>ANKIT RAUT</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team1.jpg" alt="Team Member 1">
+                <h4>HARISH BODKHE</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team3.jpg" alt="Team Member 3">
+                <h4>SANKET CHOTHE</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team4.jpg" alt="Team Member 4">
+                <h4>ATHRAV SUNE</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team4.jpg" alt="Team Member 4">
+                <h4>ATHRAV SUNE</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team4.jpg" alt="Team Member 4">
+                <h4>ATHRAV SUNE</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team4.jpg" alt="Team Member 4">
+                <h4>ATHRAV SUNE</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team4.jpg" alt="Team Member 4">
+                <h4>ATHRAV SUNE</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team4.jpg" alt="Team Member 4">
+                <h4>ATHRAV SUNE</h4>
+                <p>Developer</p>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact" id="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Thank you for visiting our Agriculture website.</p> 
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Pote Estate,<br>Kathora Road<br>444602</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>932-224-07796</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>ankitraut123@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="name" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" name="email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea name="message" required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Connect On Section -->
+        <div class="social-icons">
+            <h3>Connect On</h3>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.whatsapp.com" target="_blank"><i class="fa fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+        </div>
+
+        <!-- Google Map Section -->
+        <div class="map-container">
+            <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160995636!2d72.74109968762798!3d19.0821978392611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8910ec676a3%3A0xb2c78b6b7d0b59b7!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1634048595052!5m2!1sen!2sus"
+                allowfullscreen="" loading="lazy"> -->
+            </iframe>
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.1212211069715!2d77.75491757471326!3d20.987777389185986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a2d15d81f4cd%3A0x703a9debc9500a6b!2sP.%20R.%20Pote%20Patil%20College%20of%20Engineering%20and%20Management!5e0!3m2!1sen!2sin!4v1729791433787!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </section>
+
+<!-- Footer section -->
+<footer>
+    <div class="footer-links">
+        <a href="Blogs.html">rewive</a>
+        <a href="contact.html">Contact</a>
+        <a href="#about">about</a>
+        <a href="terms.html"></a>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+    </div>
+
+    <div id="google_translate_element"></div>
+</footer>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+<script>
+    // Auto-loop the slides
+    const slides = document.querySelector('.slides');
+    const slidesClone = slides.innerHTML;
+    slides.innerHTML += slidesClone;  // Cloning slides for infinite loop
+</script>
+
+<!-- JavaScript for slide functionality -->
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+
+    // Toggle mobile menu
+    document.getElementById("menu-btn").addEventListener("click", function() {
+        document.querySelector(".navbar").classList.toggle("active");
+    });
+
+
+
+</script>
+<script src="https://kit.fontawesome.com/69c207103e.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

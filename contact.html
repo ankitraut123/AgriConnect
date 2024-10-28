@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Contact Us Page by Sanket Chothe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="cont.css">
+    <style>
+        /* Add some basic styling for the map */
+        .map-container {
+            margin-top: 30px;
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+      
+        .contact {
+            padding: 40px;
+            background-color: #f3f4f6;
+        }
+
+        .contact .content {
+            text-align: center;
+        }
+
+        .contact .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contactInfo {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .contactInfo .box {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .contactInfo .icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .contactInfo h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .contactForm {
+            flex: 1;
+        }
+
+        .contactForm form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contactForm .inputBox {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .contactForm .inputBox input, 
+        .contactForm .inputBox textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .contactForm .inputBox input[type="submit"] {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .contactForm .inputBox input[type="submit"]:hover {
+            background-color: #2e7031;
+        }
+
+        /* Social media section */
+        .social-icons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #388e3c;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .contactInfo, .contactForm {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Thank you for visiting our Agriculture website.</p> 
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Pote Estate,<br>Kathora Road<br>444602</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>932-224-07796</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>sanketchothe55@gamil.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="name" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" name="email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea name="message" required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Connect On Section -->
+        <div class="social-icons">
+            <h3>Connect On</h3>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.whatsapp.com" target="_blank"><i class="fa fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+        </div>
+
+        <!-- Google Map Section -->
+        <div class="map-container">
+        
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.1212211069715!2d77.75491757471326!3d20.987777389185986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6a2d15d81f4cd%3A0x703a9debc9500a6b!2sP.%20R.%20Pote%20Patil%20College%20of%20Engineering%20and%20Management!5e0!3m2!1sen!2sin!4v1729791433787!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+            </iframe>
+        </div>
+    </section>
+</body>
+</html>

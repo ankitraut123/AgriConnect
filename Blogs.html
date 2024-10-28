@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Blogs</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap');
+      
+      /* General styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f9;
+      }
+
+      /* Fixed Header */
+     /* Header styling */
+     .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        .header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 15px;
+            transition: color 0.3s ease;
+
+        }
+
+        .navbar ul li a:hover {
+            color: #4CAF50;
+            transform: translateY(5px);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+            color: #333;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #4CAF50;
+        }
+
+      /* Blogs Section */
+      .blogs {
+        padding: 80px 40px;
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .blogs h1.heading {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 40px;
+      }
+
+      .blogs h1 span {
+        color: #4CAF50;
+      }
+
+      .blogs .box-container {
+        margin: 50px 10%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .blogs .box {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .blogs .box:hover {
+        transform: translateX(-10px);
+      }
+
+      .blogs .box img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .blogs .box .content {
+        padding: 20px;
+        text-align: left;
+      }
+
+      .blogs .box .content ul.icons {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        list-style: none;
+      }
+
+      .blogs .box .content ul.icons li a {
+        color: #666;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+
+      .blogs .box .content ul.icons li a:hover {
+        color: #130f40;
+      }
+
+      .blogs .box .content ul.icons li a i {
+        padding-right: 5px;
+        color: #4CAF50;
+      }
+
+      .blogs .box .content h2 {
+        font-size: 1.5rem;
+        margin: 15px 0;
+        color: #333;
+      }
+
+      .blogs .box .content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .blogs .box .content .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .blogs .box .content .btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+<style>
+.add-blog {
+    margin: 40px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.add-blog h2 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.add-blog form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-blog form input, .add-blog form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-blog form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-blog form button:hover {
+    background-color: #45a049;
+}
+
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: auto; /* Pushes footer to the bottom */
+            width: 100%;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #4CAF50;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 2rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #a8af4c;
+            transform: translateY(-5px);
+        }
+</style>
+</head>
+<body>
+
+<!-- Fixed Header Section -->
+<header class="header">
+  <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Agriconnect</a>
+
+  <nav class="navbar">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tool.html">Tools</a></li>
+          <li class="dropdown">
+              <a href="#">Products</a>
+              <div class="dropdown-content">
+                  <a href="organic1.html">Organic Fertilizers</a>
+                  <a href="chemical.html">Chemical Fertilizers</a>
+              </div>
+          </li>
+          <li><a href="Technique.html">Education & Training</a></li>
+          <li><a href="SCHEME.HTML">Scheme</a></li>
+          <li><a href="Blogs.html">Blogs</a></li>
+      </ul>
+  </nav>
+
+  <div class="icons">
+      <i class="fa fa-bars" id="menu-btn"></i>
+      <i class="fa fa-user"></i>
+  </div>
+
+  <form class="search-form">
+      <input type="search" id="search-box" placeholder="Search Here...">
+      <label for="search-box" class="fa fa-search"></label>
+  </form>
+</header>
+
+<!-- Blogs Section -->
+<section class="blogs" id="blogs">
+    <h1 class="heading"> Our <span>Blogs</span></h1>
+    <div class="box-container">
+        <!-- Blog Post 1 -->
+        <div class="box">
+            <img src="img/digital.png" alt="Digital Farming">
+            <div class="content">
+                <ul class="icons">
+                    <li><a href="#"><i class="fa fa-user"></i> By User</a></li>
+                    <li><a href="#"><i class="fa fa-calendar"></i> 01/05/2024</a></li>
+                </ul>
+                <h2>Digital Farming</h2>
+                <p>Digital farming, also known as precision agriculture, leverages technology and data to enhance farming practices. Key aspects: Technology Integration, Drones, GPS, Remote Monitoring.</p>
+                <a href="digital-farming.html" class="btn">Read more</a>
+            </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="box">
+            <img src="img/organic.jpg" alt="Grow Organically">
+            <div class="content">
+                <ul class="icons">
+                    <li><a href="#"><i class="fa fa-user"></i> By User</a></li>
+                    <li><a href="#"><i class="fa fa-calendar"></i> 21/07/2024</a></li>
+                </ul>
+                <h2>Grow Organically</h2>
+                <p>Organic farming focuses on growing without synthetic fertilizers. Learn how to nurture your soil naturally and protect biodiversity.</p>
+                <a href="organic-farming.html" class="btn">Read more</a>
+            </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="box">
+            <img src="img/tools.png" alt="Use Modern Tools">
+            <div class="content">
+                <ul class="icons">
+                    <li><a href="#"><i class="fa fa-user"></i> By User</a></li>
+                    <li><a href="#"><i class="fa fa-calendar"></i> 15/08/2024</a></li>
+                </ul>
+                <h2>Use Modern Tools</h2>
+                <p>Explore how modern tools are revolutionizing agriculture. From tractors to sensors, discover innovative technology to boost efficiency.</p>
+                <a href="modern-tools.html" class="btn">Read more</a>
+            </div>
+        </div>
+        
+    
+
+    
+        <div class="box">
+          <img src="img/nature.png" alt="Sustainable Nature">
+            <div class="content">
+             <ul class="icons">
+                 <li><a href="#"><i class="fa fa-user"></i> By User</a></li>
+                 <li><a href="#"><i class="fa fa-calendar"></i> 10/09/2024</a></li>
+             </ul>
+             <h2>Develop a Sustainable Nature</h2>
+             <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Veniam, Expedita.</p>
+             <a href="sustainable-nature.html" class="btn">Read more</a>
+            </div>
+        </div>
+
+        <div class="box">
+           <img src="img/awareness.png" alt="Stay Aware About Farming">
+             <div class="content">
+              <ul class="icons">
+                  <li><a href="#"><i class="fa fa-user"></i> By User</a></li>
+                  <li><a href="#"><i class="fa fa-calendar"></i> 11/09/2024</a></li>
+              </ul>
+              <h2>Stay Aware About Farming</h2>
+              <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Veniam, Expedita.</p>
+              <a href="farming-awareness.html" class="btn">Read more</a>
+             </div>
+        </div>
+
+        <div class="box">
+           <img src="img/scr.png" alt="Fresh and Organic Vegetables and Fruits">
+             <div class="content">
+              <ul class="icons">
+                  <li><a href="#"><i class="fa fa-user"></i> By User</a></li>
+                  <li><a href="#"><i class="fa fa-calendar"></i> 21/09/2024</a></li>
+              </ul>
+              <h2>Fresh and Organic Vegetables and Fruits</h2>
+              <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Veniam, Expedita.</p>
+              <a href="organic-vegetables.html" class="btn">Read more</a>
+             </div>
+        </div>
+    </div>
+</section>
+<section class="add-blog" id="add-blog">
+    <h2>Add Your Blog</h2>
+    <form id="blogForm">
+        <label for="blogTitle">Blog Title:</label>
+        <input type="text" id="blogTitle" name="blogTitle" required><br><br>
+
+        <label for="blogContent">Blog Content:</label>
+        <textarea id="blogContent" name="blogContent" required></textarea><br><br>
+
+        <label for="blogImage">Upload Image:</label>
+        <input type="file" id="blogImage" name="blogImage" accept="image/*" required><br><br>
+
+        <label for="blogAuthor">Author:</label>
+        <input type="text" id="blogAuthor" name="blogAuthor" required><br><br>
+
+        <button type="submit">Submit Blog</button>
+    </form>
+</section>
+
+
+
+
+<script>
+    document.getElementById('blogForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form from submitting traditionally
+
+        // Capture the form data
+        const title = document.getElementById('blogTitle').value;
+        const content = document.getElementById('blogContent').value;
+        const author = document.getElementById('blogAuthor').value;
+        const imageFile = document.getElementById('blogImage').files[0];
+
+        // Create a new FileReader to read the image file
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const imageUrl = event.target.result;
+
+            // Generate a unique ID for the blog
+            const blogId = new Date().getTime(); // Use timestamp as a unique ID
+
+            // Create a new blog card dynamically
+            const newBlog = `
+                <div class="box">
+                    <img src="${imageUrl}" alt="${title}">
+                    <div class="content">
+                        <ul class="icons">
+                            <li><a href="#"><i class="fa fa-user"></i> By ${author}</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i> ${new Date().toLocaleDateString()}</a></li>
+                        </ul>
+                        <h2>${title}</h2>
+                        <p>${content.substring(0, 100)}... </p> <!-- Display first 100 characters -->
+                        <a href="blog_${blogId}.html" class="btn">Read More</a>
+                    </div>
+                </div>
+            `;
+
+            // Add the new blog card to the existing blog list
+            document.querySelector('.blogs .box-container').insertAdjacentHTML('beforeend', newBlog);
+
+            // Generate the blog's detailed page
+            generateBlogPage(blogId, title, content, author, imageUrl);
+
+            // Reset the form
+            document.getElementById('blogForm').reset();
+        };
+
+        // Read the image file as a data URL
+        if (imageFile) {
+            reader.readAsDataURL(imageFile);
+        }
+    });
+
+    // Function to generate the detailed blog page
+    function generateBlogPage(blogId, title, content, author, imageUrl) {
+        const blogPageContent = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>${title}</title>
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+                <style>
+                  /* Similar styling as your blog page */
+                  body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f0f0f0; color: #333; line-height: 1.6; }
+                  .container { max-width: 900px; margin: 50px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); border-radius: 10px; }
+                  h1 { font-size: 3rem; color: #2c3e50; margin-bottom: 20px; text-align: center; }
+                  img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 30px; }
+                  .section { padding: 20px; margin-bottom: 30px; background-color: #f9fafb; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+                  .section h2 { font-size: 1.8rem; color: #27ae60; margin-bottom: 15px; }
+                  .btn-back { display: inline-block; margin-top: 30px; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #27ae60; border: none; border-radius: 5px; text-align: center; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease; }
+                  .btn-back:hover { background-color: #2ecc71; }
+                  .footer { text-align: center; margin-top: 50px; font-size: 0.9rem; color: #7f8c8d; }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <img src="${imageUrl}" alt="${title}">
+                    <h1>${title}</h1>
+                    <div class="section">
+                        <h2>By ${author}</h2>
+                        <p>${content}</p>
+                    </div>
+                    <a href="blogs.html" class="btn-back">← Back to Blogs</a>
+                </div>
+                <div class="footer">
+                    © 2024 ${author}'s Blog. All Rights Reserved.
+                </div>
+            </body>
+            </html>
+        `;
+
+    
+        const blob = new Blob([blogPageContent], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+
+        
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `blog_${blogId}.html`; 
+        link.click();
+
+
+        URL.revokeObjectURL(url);
+    }
+</script>
+
+
+<script>
+    document.getElementById('blogForm').addEventListener('submit', function (e) {
+        e.preventDefault(); 
+
+    
+        const title = document.getElementById('blogTitle').value;
+        const content = document.getElementById('blogContent').value;
+        const author = document.getElementById('blogAuthor').value;
+        const imageFile = document.getElementById('blogImage').files[0];
+        
+        
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const imageUrl = event.target.result;
+
+            
+            const newBlog = `
+    <div class="box">
+        <img src="${imageUrl}" alt="${title}">
+        <div class="content">
+            <ul class="icons">
+                <li><a href="#"><i class="fa fa-user"></i> By ${author}</a></li>
+                <li><a href="#"><i class="fa fa-calendar"></i> ${new Date().toLocaleDateString()}</a></li>
+            </ul>
+            <h2>${title}</h2>
+            <p>${content.substring(0, 100)}...</p> <!-- Display first 100 characters -->
+            <a href="blog_${new Date().getTime()}.html" class="btn">Read More</a> <!-- Read more button -->
+        </div>
+    </div>
+`;
+
+
+            // Add the new blog to the DOM
+            document.querySelector('.blogs .box-container').insertAdjacentHTML('beforeend', newBlog);
+
+            // Clear the form fields after submission
+            document.getElementById('blogForm').reset();
+        };
+
+        // Read the image file as a data URL
+        if (imageFile) {
+            reader.readAsDataURL(imageFile);
+        }
+    });
+</script> 
+
+
+<script src="js/script.js"></script>
+<!-- Footer section -->
+<footer>
+    <div class="footer-links">
+        <a href="Blogs.html">rewive</a>
+        <a href="contact.html">Contact</a>
+        <a href="aboutmore.html">about</a>
+        <a href="terms.html"></a>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+    </div>
+
+    <div id="google_translate_element"></div>
+</footer>
+<script src="https://kit.fontawesome.com/69c207103e.js" crossorigin="anonymous"></script>
+</body>
+</html>

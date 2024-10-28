@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+ <title>Cards</title>
+ <!-- Code for font awesome cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Code for font awesome cdn -->
+
+<!-- Code for font awesome cdn -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Code for linking css file -->
+ <script>
+   function welcome(){
+      window.open("http://www.youtube.com")
+   }
+ </script>
+ 
+</head>
+
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300&display=swap');
+
+
+*{
+ margin: 0px;
+ padding: 0px;
+}
+body
+{
+ font-family: arial;
+}
+/* Fixed Header */
+/* Header styling */
+.header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        .header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 15px;
+            transition: color 0.3s ease;
+
+        }
+
+        .navbar ul li a:hover {
+            color: #4CAF50;
+            transform: translateY(5px);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .navbar ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 10px;
+            color: #333;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #4CAF50;
+        }
+.main {
+            margin: 0 5%;
+            text-align: center;
+        }
+
+        .card {
+            width: 20%;
+            height: 47%;
+            display: inline-block;
+            background-color: #fff;
+            margin: 1%;
+            box-shadow: 0 4px 8px rgba(27, 3, 3, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .title {
+            padding: 15px 0;
+            background-color: #cf8a08;
+            color: #fff;
+        }
+        .title h1 {
+            font-size: 18px;
+        }
+        .navbar ul li a:hover {
+        background-color: #45a049;
+        border-radius: 5px;
+        transform: translateY(5px);
+      }
+
+h1{
+  font-size: 20px;
+ }
+
+ .des {
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        .des p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+        .des button {
+            background-color: #1ab129;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .des button:hover {
+            background-color: #15d542;
+        }
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+
+        
+
+      /* Blogs Section */
+      .blogs {
+        padding: 80px 40px;
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .blogs h1.heading {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 40px;
+      }
+
+      .blogs h1 span {
+        color: #4CAF50;
+      }
+
+      .blogs .box-container {
+        margin: 50px 2%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .blogs .box {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .blogs .box:hover {
+        transform: translateX(-10px);
+      }
+
+      .blogs .box img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .blogs .box .content {
+        padding: 20px;
+        text-align: left;
+      }
+
+      .blogs .box .content ul.icons {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        list-style: none;
+      }
+
+      .blogs .box .content ul.icons li a {
+        color: #666;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+
+      .blogs .box .content ul.icons li a:hover {
+        color: #130f40;
+      }
+
+      .blogs .box .content ul.icons li a i {
+        padding-right: 5px;
+        color: #4CAF50;
+      }
+
+      .blogs .box .content h2 {
+        font-size: 1.5rem;
+        margin: 15px 0;
+        color: #333;
+      }
+
+      .blogs .box .content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .blogs .box .content .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .blogs .box .content .btn:hover {
+        background-color: #45a049;
+      }
+/* Footer section */
+footer {
+        background-color: #333;
+        color: #fff;
+        padding: 30px 20px;
+        text-align: center;
+        margin-top: 20px; /* Pushes footer below other content */
+        width: 100%;
+    }
+
+    footer .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    footer .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 15px;
+        transition: color 0.3s ease;
+    }
+
+    footer .footer-links a:hover {
+        color: #4CAF50;
+    }
+
+    footer .social-icons a {
+        color: #fff;
+        font-size: 2rem;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+        color: #4CAF50;
+        transform: translateY(-5px);
+    }
+
+
+</style>
+<body>
+  <header class="header">
+    <a href="#" class="logo"><i class="fa fa-shopping-basket"></i> Agriconnect</a>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tool.html">Tools</a></li>
+            <li class="dropdown">
+                <a href="#">Products</a>
+                <div class="dropdown-content">
+                    <a href="organic1.html">Organic Fertilizers</a>
+                    <a href="chemical.html">Chemical Fertilizers</a>
+                </div>
+            </li>
+            <li><a href="Technique.html">Education & Training</a></li>
+            <li><a href="SCHEME.HTML">Scheme</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <i class="fa fa-bars" id="menu-btn"></i>
+        <i class="fa fa-user"></i>
+    </div>
+
+    <form class="search-form">
+        <input type="search" id="search-box" placeholder="Search Here...">
+        <label for="search-box" class="fa fa-search"></label>
+    </form>
+</header>
+   <!-- Blogs Section -->
+<section class="blogs" id="blogs">
+   <h1 class="heading"> Our <span>Organic Fertilizer Products</span></h1>
+   <div class="box-container">
+       <!-- Blog Post 1 -->
+
+<div class="main">
+
+ <!--cards -->
+ <div class="card">
+
+    <div class="image">
+       <img src="image/bloom drop.jpeg">
+    </div>
+    <div class="title">
+     <h1>Bloom Drop</h1>
+    </div>
+    <div class="des">
+     <p>₹599/-</p>
+    <button><a href="op1.html">Read more...</a></button>
+    </div>
+    </div>
+    <!--cards -->
+    
+    
+    <div class="card">
+    
+        <div class="image">
+           <img src="image/hydroponic.jpeg">
+        </div>
+        <div class="title">
+         <h1>Hydroponic</h1>
+        </div>
+        <div class="des">
+         <p>₹599/-</p>
+        <button> <a href="op2.html">Read more...</a></button>
+        </div>
+        </div>
+        <!--cards -->
+        
+        
+        <div class="card">
+        
+        <div class="image">
+           <img src="image/indoor drop.jpeg">
+        </div>
+        <div class="title">
+         <h1>IndoorDrop</h1>
+        </div>
+        <div class="des">
+         <p>₹599/-</p>
+        <button><a href="op3.html" >Read more...</a></button>
+        </div>
+        </div>
+        <!--cards -->
+        
+        
+        <div class="card">
+        
+        <div class="image">
+           <img src="image/plantic.jpeg">
+        </div>
+        <div class="title">
+         <h1>Plantic </h1>
+        </div>
+        <div class="des">
+         <p>₹599/-</p>
+        <button><a href="op4.html">Read More...</a></button>
+        </div>
+        </div>
+        <!--cards -->
+        
+        
+        <div class="card">
+        
+        <div class="image">
+           <img src="image/panchsheel.jpeg">
+        </div>
+        <div class="title">
+         <h1>Panchsheel</h1>
+        </div>
+        <div class="des">
+         <p>₹549/-</p>
+         <button><a href="op5.html">Read More...</a></button>
+        </div>
+        </div>
+        <!--cards -->
+        
+        <div class="card">
+        
+        <div class="image">
+           <img src="image/multimicro.jpeg">
+        </div>
+        <div class="title">
+         <h1>Multimicro Product</h1>
+        </div>
+        <div class="des">
+         <p>₹399/-</p>
+         <button><a href="op6.html">Read More...</a></button>
+        </div>
+        </div>
+        <!--cards -->
+        
+        <div class="card">
+        
+        <div class="image">
+           <img src="image/bionpk (2).jpeg">
+        </div>
+        <div class="title">
+         <h1>Bio-npk</h1>
+        </div>
+        <div class="des">
+         <p>₹249/-</p>
+         <button><a href="op7.html">Read More...</a></button>
+        
+        </div>
+        </div>
+        <!--cards -->
+        
+        
+        <div class="card">
+        
+        <div class="image">
+           <img src="image/panchsheel.jpeg">
+        </div>
+        <div class="title">
+         <h1>Panchsheel</h1>
+        </div>
+        <div class="des">
+         <p>₹549/-</p>
+        <button><a href="">read more..</a></button>
+        </div>
+        </div>
+        <!--cards -->
+   
+
+    </div>
+  </section>
+ <!-- Footer Section -->
+ <footer>
+    <div class="footer-links">
+        <a href="Blogs.html">rewive</a>
+        <a href="contact.html">Contact</a>
+        <a href="aboutmore.html">about</a>
+        <a href="terms.html"></a>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+    </div>
+
+    <div id="google_translate_element"></div>
+</footer>
+<script src="https://kit.fontawesome.com/69c207103e.js" crossorigin="anonymous"></script>
+   
+    </body>
+    </html>
+    
